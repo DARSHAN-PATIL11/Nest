@@ -9,6 +9,11 @@
 ![CI/CD](https://img.shields.io/github/actions/workflow/status/owasp/nest/run-ci-cd.yaml?branch=main&color=41BE41&?label=Build&style=for-the-badge)
 ![License](https://img.shields.io/github/license/owasp/nest?color=41BE4A&label=License&style=for-the-badge)
 
+[![CodeQL](https://github.com/OWASP/Nest/actions/workflows/run-ci-cd.yaml/badge.svg?branch=main&style=for-the-badge)](https://github.com/OWASP/Nest/actions/workflows/run-ci-cd.yaml?query=workflow%3ACodeQL)
+[![Known Vulnerabilities](https://snyk.io/test/github/OWASP/Nest/badge.svg?style=for-the-badge)](https://snyk.io/test/github/OWASP/Nest)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=OWASP_Nest&metric=alert_status&style=for-the-badge)](https://sonarcloud.io/dashboard?id=OWASP_Nest)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10174/badge?style=for-the-badge)](https://www.bestpractices.dev/projects/10174)
+
 ![Stars](https://img.shields.io/github/stars/owasp/nest?style=for-the-badge&label=Stars)
 ![Forks](https://img.shields.io/github/forks/owasp/nest?style=for-the-badge&label=Forks)
 
