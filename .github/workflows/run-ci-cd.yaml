@@ -80,8 +80,7 @@ jobs:
         run: |
           git diff --exit-code || (echo 'Unstaged changes detected. \
           Run `make check-all` and use `git add` to address it.' && exit 1)
-
-  snyk-security:
+   snyk-security:
     name: Snyk Security Check
     needs:
       - pre-commit
@@ -89,7 +88,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        
+
       - name: Run Snyk to check for vulnerabilities (Backend)
         uses: snyk/actions/python@master
         env:
@@ -97,7 +96,7 @@ jobs:
         with:
           command: test
           args: --file=backend/poetry.lock
-          
+
       - name: Run Snyk to check for vulnerabilities (Frontend)
         uses: snyk/actions/node@master
         env:
@@ -150,6 +149,7 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: /language:${{ matrix.language }}
+
   spellcheck:
     name: Run spell check
     runs-on: ubuntu-latest
