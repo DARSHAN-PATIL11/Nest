@@ -79,8 +79,9 @@ jobs:
       - name: Check for uncommitted changes
         run: |
           git diff --exit-code || (echo 'Unstaged changes detected. \
-          Run `make check-all` and use `git add` to address it.' && exit 1)
-   snyk-security:
+          Run make check-all and use git add to address it.' && exit 1)
+
+  snyk-security:
     name: Snyk Security Check
     needs:
       - pre-commit
