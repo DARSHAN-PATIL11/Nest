@@ -80,7 +80,30 @@ jobs:
         run: |
           git diff --exit-code || (echo 'Unstaged changes detected. \
           Run `make check-all` and use `git add` to address it.' && exit 1)
-
+  snyk-security:
+  name: Snyk Security Check
+  needs:
+    - pre-commit
+  runs-on: ubuntu-latest
+  steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+    
+    - name: Run Snyk to check for vulnerabilities (Backend)
+      uses: snyk/actions/python@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        command: test
+        args: --file=backend/poetry.lock
+        
+    - name: Run Snyk to check for vulnerabilities (Frontend)
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        command: test
+        args: --file=frontend/pnpm-lock.yaml
   code-ql:
     name: CodeQL
     needs:
